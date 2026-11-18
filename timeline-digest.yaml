@@ -1,0 +1,46 @@
+# 分散型SNS年表(配布シート用の要約版)
+#
+# 本誌の年表(timeline.yaml。本体 articles/shino3-timeline からのコピー)から、
+# 流れをつかむのに要る出来事だけを選び、見出しを短く書き直したもの。
+# 事実は timeline.yaml の出典に拠る。ここで新しい事実は足さない。
+#
+#   date  : "2017.04" / "2014" など。日まで要らないので年月まで
+#   tags  : 先頭がその出来事の色。japan は色でなく JP のラベルになる
+#   title : 一行の見出し(20 字前後)
+#   big   : 軸の上に大きく出す数字(任意)。big-note はその説明
+#   時代の span は軸の下に大きく出す西暦
+
+eras:
+  - title: 中央集権の時代
+    span: "2004"
+    events:
+      - { date: "2004.02", tags: [central, japan], title: "mixi が始まる" }
+      - { date: "2006.07", tags: [central], title: "Twitter が一般公開" }
+      - { date: "2010.11", tags: [ap], title: "分散型の Diaspora が公開" }
+      - { date: "2014", tags: [ap, japan], title: "syuilo が Misskey を公開" }
+
+  - title: 分散型のしくみが出そろう
+    span: "2016"
+    events:
+      - { date: "2016.10", tags: [ap], title: "Mastodon 公開" }
+      - { date: "2017.04", tags: [ap, japan], title: "日本でマストドンブーム" }
+      - { date: "2018.01", tags: [ap], title: "ActivityPub が W3C 勧告に" }
+      - { date: "2019.12", tags: [bsky], title: "Jack Dorsey が Bluesky 構想を発表" }
+      - { date: "2020.11", tags: [nostr], title: "fiatjaf が Nostr を公開" }
+
+  - title: 移住の波
+    span: "2022"
+    events:
+      - { date: "2022.10", tags: [central], title: "Elon Musk が Twitter を買収" }
+      - { date: "2022.11", tags: [ap], title: "Mastodon へ大移住" }
+      - { date: "2023.01", tags: [central], title: "外部クライアントの締め出し" }
+      - { date: "2023.02", tags: [nostr, japan], title: "Damus 公開、日本で Nostr が広まる" }
+      - { date: "2023.02", tags: [bsky], title: "Bluesky が招待制で公開" }
+      - { date: "2023.07", tags: [central, japan], title: "閲覧数の制限、Misskey.io に登録殺到" }
+      - { date: "2023.07", tags: [central], title: "Threads 公開、Twitter は X に" }
+      - { date: "2023.12", tags: [ap], title: "Threads が ActivityPub 対応を試験" }
+      - { date: "2024.02", tags: [bsky], title: "Bluesky が誰でも登録できるように" }
+      - { date: "2024.08", tags: [bsky], title: "ブラジルで X 停止、Bluesky へ移住", big: "260 万", big-note: "1 週間の登録" }
+      - { date: "2024.11", tags: [bsky], title: "米大統領選後、X から Bluesky へ" }
+      - { date: "2026.03", tags: [bsky], title: "IETF に ATP ワーキンググループ" }
+      - { date: "2026.08", tags: [bsky], title: "Atproto Spaces 公開。Bluesky は約 4,600 万人に" }

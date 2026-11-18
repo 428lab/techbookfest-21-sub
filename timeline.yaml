@@ -1,0 +1,498 @@
+# 分散型SNS年表のデータ
+#
+# 書き方
+#   date       : "2017-04-11" / "2017-04" / "2017" のどれか。月や日が不明なら省く
+#   date-note  : 「中旬」「下旬」「末」など、日付に添える言葉(任意)
+#   tags       : categories のキー。先頭のタグがその出来事の主な分類になる
+#   title      : 1 行の見出し
+#   body       : 事実の説明(任意)。調べた内容はここに書く
+#   comment    : 著者(Shino3)が自分の言葉で差し込む欄。空なら何も出ない
+#   unverified : true なら「要確認」の印が付く。出典を確かめたら消す
+#   sources    : 出典の URL(任意)
+#
+# 時代(eras)にも intro と comment がある。intro はその時代の説明、comment は著者の所感
+
+meta:
+  title: 分散型SNS年表
+  subtitle: 中央集権から分散へ、二十余年の流れ
+  updated: "2026-11-14"
+
+categories:
+  central:
+    label: 中央集権SNS
+    short: CENTRAL
+  ap:
+    label: ActivityPub / Fediverse
+    short: AP
+  misskey:
+    label: Misskey
+    short: MISSKEY
+  bsky:
+    label: Bluesky / AT Protocol
+    short: BLUESKY
+  nostr:
+    label: Nostr
+    short: NOSTR
+  japan:
+    label: 日本での動き
+    short: JP
+
+eras:
+  - id: prehistory
+    title: 前史
+    subtitle: 中央集権SNSの時代と、最初の分散の試み
+    span: 2004〜2013
+    intro: ""
+    comment: ""
+    events:
+      - date: "2004-02-22"
+        tags: [central, japan]
+        title: mixi がサービスを開始
+        body: 友人からの招待制の SNS として日本で普及する。
+        comment: ""
+        sources:
+          - https://www.watch.impress.co.jp/docs/news/1573654.html
+      - date: "2006-07-15"
+        tags: [central]
+        title: Twitter が一般公開
+        body: 共同創業者の一人が Jack Dorsey。
+        comment: ""
+        sources:
+          - https://www.britannica.com/money/Jack-Dorsey
+      - date: "2008-04-23"
+        tags: [central, japan]
+        title: Twitter の日本語版が公開
+        body: デジタルガレージと共同で日本語版を公開する。
+        comment: ""
+        sources:
+          - https://internet.watch.impress.co.jp/cda/news/2008/04/23/19338.html
+      - date: "2008-07-02"
+        tags: [ap]
+        title: identi.ca（Laconica、後の StatusNet）が公開
+        body: 後の OStatus・GNU social につながる、分散型マイクロブログの先駆け。
+        comment: ""
+        sources:
+          - https://en.wikipedia.org/wiki/Identi.ca
+      - date: "2010-11-23"
+        tags: [ap]
+        title: Diaspora が公開
+        body: 招待制のアルファ版が始まる。「Facebook の分散型の代替」として注目を集めた。
+        comment: ""
+        sources:
+          - https://en.wikipedia.org/wiki/Diaspora_(social_network)
+      - date: "2011"
+        date-note: ごろ
+        tags: [central, japan]
+        title: mixi の利用が減っていく
+        body: 「mixi 離れ」が言われ、利用者が Twitter・Facebook へ移っていく。
+        comment: ""
+        sources:
+          - https://www.japantimes.co.jp/life/2011/12/21/digital/2011-the-year-when-japan-went-global-over-social-networking/
+
+  - id: mastodon
+    title: Mastodon の誕生
+    subtitle: 日本のマストドンブーム
+    span: 2014〜2017
+    intro: ""
+    comment: ""
+    events:
+      - date: "2014"
+        tags: [misskey]
+        title: syuilo が Misskey を公開
+        body: 当時15歳の syuilo（しゅいろ）が公開。最初は掲示板型のサービスだった。
+        comment: ""
+        sources:
+          - https://levtech.jp/media/article/interview/detail_268/
+      - date: "2016-10-06"
+        tags: [ap]
+        title: Eugen Rochko が Mastodon を一般に発表
+        body: ソースは同年3月に公開済み。当初は OStatus で連合していた。
+        comment: ""
+        sources:
+          - https://blog.joinmastodon.org/2018/10/mastodons-2-year-anniversary/
+      - date: "2017-04-11"
+        tags: [ap, japan]
+        title: mstdn.jp が始まる
+        body: 4月15日にさくらのクラウドへ移ってデータを初期化し、再登録を受け付け、登録者数は同日夜に3万人を超える。4月16日には登録者数で世界1位になる。
+        comment: ""
+        sources:
+          - https://mstdn.miraheze.org/wiki/Mstdn.jp
+          - https://www.itmedia.co.jp/news/articles/1704/15/news020.html
+      - date: "2017-04-17"
+        tags: [ap, japan]
+        title: pixiv の Pawoo が登録者数で世界1位に
+        body: 4月19日には mstdn.jp が1位に戻る。8月には Twitter で絵描きのアカウントが相次いで凍結され、Pawoo へ移る人が増えた。
+        comment: ""
+        sources:
+          - https://www.itmedia.co.jp/news/articles/1704/17/news115.html
+          - https://www.itmedia.co.jp/news/articles/1708/28/news085.html
+      - date: "2017-04-19"
+        tags: [ap, japan]
+        title: ドワンゴが friends.nico を公開
+        body: 「お試し」として公開。niconico のアカウントと連携できた。mstdn.jp・Pawoo とともに国内の大手インスタンス（サーバー）として並び称された。
+        comment: ""
+        sources:
+          - https://www.itmedia.co.jp/news/articles/1704/19/news136.html
+          - https://gihyo.jp/lifestyle/serial/01/mastodon/0001
+      - date: "2017-09-10"
+        tags: [ap]
+        title: Mastodon v1.6 が ActivityPub に対応
+        body: ActivityPub を主なプロトコルにする。最初の実装ではないが、当時最大の実装だった。
+        comment: ""
+        sources:
+          - https://activitypub.rocks/news/mastodon-ap-and-new-cr/
+          - https://github.com/mastodon/mastodon/releases/tag/v1.6.0
+
+  - id: activitypub
+    title: ActivityPub の標準化
+    subtitle: Misskey が連合に加わる
+    span: 2018〜2019年4月
+    intro: ""
+    comment: ""
+    events:
+      - date: "2018-01-23"
+        tags: [ap]
+        title: ActivityPub が W3C 勧告に
+        body: ""
+        comment: ""
+        sources:
+          - https://www.w3.org/news/2018/activitypub-is-now-a-w3c-recommendation/
+      - date: "2018"
+        tags: [misskey, ap]
+        title: Misskey が ActivityPub に対応
+        body: Fediverse の一員になる。
+        comment: ""
+        sources:
+          - https://en.wikipedia.org/wiki/Misskey
+      - date: "2019-04-15"
+        tags: [misskey, japan]
+        title: Misskey.io が始まる
+        body: 後に最大の Misskey サーバーになる。
+        comment: ""
+        sources:
+          - https://en.wikipedia.org/wiki/Misskey
+          - https://prtimes.jp/main/html/rd/p/000000001.000137834.html
+
+  - id: bluesky-nostr
+    title: Bluesky 構想と Nostr の誕生
+    subtitle: Twitter の中から、Twitter の外から
+    span: 2019年12月〜2022
+    intro: ""
+    comment: ""
+    events:
+      - date: "2019-12-11"
+        tags: [bsky, central]
+        title: Jack Dorsey が Bluesky を発表
+        body: Twitter の CEO だった Jack Dorsey が、Twitter の資金で小さな独立チームを作り、分散型 SNS のオープンな標準を開発させると発表。
+        comment: ""
+        sources:
+          - https://www.cnbc.com/2019/12/11/twitter-ceo-jack-dorsey-announces-bluesky-social-media-standards-push.html
+      - date: "2020-11-07"
+        tags: [nostr]
+        title: fiatjaf が Nostr を公開
+        body: ""
+        comment: ""
+        sources:
+          - https://github.com/nostr-protocol/nostr/commits/master
+      - date: "2021"
+        date-note: 末
+        tags: [bsky]
+        title: Bluesky が独立した会社に
+        body: Twitter から独立した会社（Bluesky PBLLC）として設立され、Twitter から初期資金1,300万ドルを得る。2022年2月に公表。
+        comment: ""
+        sources:
+          - https://bsky.social/about/blog/2-7-2022-overview
+      - date: "2022-10-27"
+        tags: [central]
+        title: Elon Musk が Twitter の買収を完了
+        body: ""
+        comment: ""
+        sources:
+          - https://en.wikipedia.org/wiki/Acquisition_of_Twitter_by_Elon_Musk
+      - date: "2022-11"
+        tags: [ap, central]
+        title: Mastodon へ大量の移住
+        body: 買収から11月7日までに約49万人が新たに登録し、Mastodon 全体の月間アクティブユーザーが100万人を超える。
+        comment: ""
+        sources:
+          - https://fortune.com/2022/11/07/mastadon-struggles-large-number-twitter-defectors
+      - date: "2022-12-15"
+        tags: [nostr]
+        title: Jack Dorsey が fiatjaf に14 BTC を寄付
+        body: 約24万5千ドル相当。Dorsey は後に（2024年）、Nostr を「Bluesky でやりたかったことそのものだが、会社から生まれたものではない」と評した。
+        comment: ""
+        sources:
+          - https://www.freethink.com/internet/nostr
+          - https://reason.com/2024/08/13/can-nostr-make-twitters-dreams-come-true/
+
+  - id: exodus
+    title: Twitter の混乱
+    subtitle: 移住先が分散した年
+    span: 2023
+    intro: ""
+    comment: ""
+    events:
+      - date: "2023-01-12"
+        tags: [central]
+        title: Twitter がサードパーティクライアントを締め出す
+        body: Tweetbot などのクライアントが突然使えなくなる。2月1日には API の無料提供を終えると発表する。
+        comment: ""
+        sources:
+          - https://www.macrumors.com/2023/01/17/twitter-third-party-apps-intentionally-blocked/
+          - https://techcrunch.com/2023/02/01/twitter-to-end-free-access-to-its-api/
+      - date: "2023-02-01"
+        tags: [nostr, japan]
+        title: Damus が App Store で正式公開
+        body: Twitter に似た UI と、Twitter の凍結騒動が重なり、日本で Nostr が急に流行る。
+        comment: ""
+        sources:
+          - https://internet.watch.impress.co.jp/docs/yajiuma/1476399.html
+          - https://note.com/tokuriki/n/ncd7c58687113
+      - date: "2023-02-13"
+        tags: [nostr]
+        title: Zap（NIP-57）が始まる
+        body: Lightning Network で投稿に少額の送金ができ、投稿者を直接支援できるようになる。
+        comment: ""
+        sources:
+          - https://github.com/nostr-protocol/nips/pull/224
+      - date: "2023-02-17"
+        tags: [bsky]
+        title: Bluesky が招待制の iOS ベータ版を公開
+        body: ""
+        comment: ""
+        sources:
+          - https://techcrunch.com/2023/02/28/jack-dorsey-backed-twitter-alternative-bluesky-hits-the-app-store-as-an-invite-only-app/
+      - date: "2023-05-04"
+        tags: [nostr]
+        title: OpenSats に1,000万ドルの寄付
+        body: "Jack Dorsey の #startsmall が非営利団体 OpenSats に寄付。うち500万ドルが Nostr の開発支援にあてられる。"
+        comment: ""
+        sources:
+          - https://opensats.org/blog/opensats-receives-additional-funding-of-dollar10m-from-startsmall
+      - date: "2023-07-02"
+        tags: [central, misskey, japan]
+        title: Twitter が閲覧数を制限、Misskey.io に登録が殺到
+        body: Twitter が1日に閲覧できる投稿数を制限。Misskey.io の登録者数が2月の約3万人から20万人超に急増し、新規登録を支援者優先に絞る。
+        comment: ""
+        sources:
+          - https://www.itmedia.co.jp/news/articles/2307/04/news108.html
+          - https://weekly.ascii.jp/elem/000/004/143/4143534/
+      - date: "2023-07"
+        tags: [bsky]
+        title: Bluesky がパブリック・ベネフィット・コーポレーションに
+        body: 公益性を目的に掲げる株式会社の形態に移り、Neo 主導のシードラウンドで800万ドルを調達する。
+        comment: ""
+        sources:
+          - https://bsky.social/about/blog/7-05-2023-business-plan
+      - date: "2023-07"
+        tags: [central]
+        title: Meta が Threads を公開、Twitter は X に改称
+        body: Threads は7月5日（米国時間）に公開。X への改称は7月23日に発表され、翌日ロゴが変わる。
+        comment: ""
+        sources:
+          - https://about.fb.com/news/2023/07/introducing-threads-new-app-text-sharing/
+          - https://www.npr.org/2023/07/23/1189685146/elon-musk-twitter-logo-bird-x
+      - date: "2023-08-08"
+        tags: [misskey, japan]
+        title: Misskey.io の運営が株式会社MisskeyHQ になる
+        body: ""
+        comment: ""
+        sources:
+          - https://misskey-hub.net/ja/blog/2023-08-08-misskeyhq/
+          - https://prtimes.jp/main/html/rd/p/000000018.000039709.html
+      - date: "2023-12-13"
+        tags: [ap, central]
+        title: Threads が ActivityPub 対応のテストを開始
+        body: ""
+        comment: ""
+        sources:
+          - https://techcrunch.com/2023/12/13/meta-starts-testing-threads-integration-with-activitypub
+
+  - id: expansion
+    title: 各プロトコルの拡大
+    subtitle: 招待制の終わりと、国境を越えた移住
+    span: 2024
+    intro: ""
+    comment: ""
+    events:
+      - date: "2024-02-06"
+        tags: [bsky]
+        title: Bluesky が誰でも登録できるように
+        body: 招待制をやめる。2月22日には、自分でサーバーを立てる人に向けて連合を開放する。
+        comment: ""
+        sources:
+          - https://techcrunch.com/2024/02/06/bluesky-is-now-open-for-anyone-to-join/
+          - https://bsky.social/about/blog/02-22-2024-open-social-web
+      - date: "2024-02"
+        date-note: 中旬
+        tags: [misskey, ap, japan]
+        title: Misskey.io と Mastodon サーバーへのスパム攻撃
+        body: 登録が開放されていたサーバーを狙う攻撃。使い捨てメールの禁止や放置サーバーの遮断で、数日で収まる。
+        comment: ""
+        sources:
+          - https://techcrunch.com/2024/02/20/spam-attack-on-twitter-x-rival-mastodon-highlights-fediverse-vulnerabilities/
+          - https://www.docswell.com/s/fono/K8GPNY-mastodon-spam-response-log
+      - date: "2024-03-21"
+        tags: [ap, central, japan]
+        title: Threads が Fediverse 共有のベータ版を開始
+        body: 最初の対象は米国・カナダ・日本。
+        comment: ""
+        sources:
+          - https://www.engadget.com/a-threads-beta-lets-you-share-to-mastodon-and-other-fediverse-services-194732036.html
+      - date: "2024-05-05"
+        tags: [bsky, nostr]
+        title: Jack Dorsey が Bluesky の取締役を退任
+        body: 後に「Twitter の失敗を繰り返している」と述べ、Nostr を推す。
+        comment: ""
+        sources:
+          - https://www.coindesk.com/business/2024/05/06/jack-dorsey-leaves-bluesky-board-touts-freedom-technology-of-x-and-nostr
+          - https://go.piratewires.com/pw/the-end-of-social-media-an-interview-with-jack-dorsey
+      - date: "2024-06-25"
+        tags: [ap, central]
+        title: Threads の Fediverse 共有が100か国以上に
+        body: EU は対象外。
+        comment: ""
+        sources:
+          - https://techcrunch.com/2024/06/25/all-threads-users-can-now-share-to-the-open-social-web-aka-the-fediverse
+      - date: "2024-08-30"
+        tags: [central, bsky]
+        title: ブラジルの最高裁判事が X の停止を命令
+        body: 1週間で260万人が Bluesky に登録し、その85%以上がブラジルから。
+        comment: ""
+        sources:
+          - https://www.npr.org/2024/08/30/nx-s1-5096220/brazil-suspends-x-elon-musk
+          - https://www.engadget.com/social-media/bluesky-added-over-2-million-brazilian-users-after-brazil-banned-elon-musks-x-140032042.html
+      - date: "2024-11"
+        tags: [central, bsky]
+        title: 米大統領選の後、X から Bluesky への移住が加速
+        body: 11月19日には登録者数が2,000万人を超え、9月中旬の1,000万人から倍になる。
+        comment: ""
+        sources:
+          - https://techcrunch.com/2024/09/16/bluesky-now-has-10-million-users/
+          - https://techcrunch.com/2024/11/19/bluesky-tops-20m-users-narrowing-gap-with-instagram-threads
+      - date: "2024-12-16"
+        tags: [central, japan]
+        title: MIXI が「mixi2」を開始
+        body: 1週間で登録者数120万人を超える。
+        comment: ""
+        sources:
+          - https://mixi.co.jp/news/2024/1223/37672/
+
+  - id: maturity
+    title: 成熟と体制の変化
+    subtitle: 経営体制が変わり、標準化が進む
+    span: 2025〜2026
+    intro: ""
+    comment: ""
+    events:
+      - date: "2025-01"
+        date-note: 末
+        tags: [bsky]
+        title: Bluesky の登録者数が3,000万人に
+        body: ""
+        comment: ""
+        sources:
+          - https://arxiv.org/abs/2504.12902
+      - date: "2025-06-17"
+        tags: [ap, central]
+        title: Threads に Fediverse フィードとプロフィール検索が加わる
+        body: ""
+        comment: ""
+        sources:
+          - https://techcrunch.com/2025/06/17/threads-expands-open-social-web-integrations-with-fediverse-feed-user-profile-search
+      - date: "2025-07"
+        tags: [nostr, ap]
+        title: Jack Dorsey が「and Other Stuff」に1,000万ドルを提供
+        body: Nostr を中心に、ActivityPub などのオープンなプロトコル上でアプリを作る非営利の開発者集団。Bluetooth で通信するメッセンジャー Bitchat もここから生まれる。
+        comment: ""
+        sources:
+          - https://www.engadget.com/social-media/jack-dorsey-backs-an-open-source-development-collective-with-10-million-140052825.html
+      - date: "2025-10-31"
+        tags: [bsky]
+        title: Bluesky の登録者数が4,000万人に
+        body: ""
+        comment: ""
+        sources:
+          - https://techcrunch.com/2025/10/31/bluesky-hits-40-million-users-introduces-dislikes-beta/
+      - date: "2025-11-18"
+        tags: [ap]
+        title: Eugen Rochko が Mastodon の CEO を退任
+        body: 商標などの資産は非営利団体に移り、運営は新設のベルギーの非営利法人へ移る。後任は新設のエグゼクティブディレクター Felix Hlatky。Rochko は顧問として残る。
+        comment: ""
+        sources:
+          - https://techcrunch.com/2025/11/18/mastodon-ceo-steps-down-as-the-social-network-restructures
+          - https://blog.joinmastodon.org/2025/11/my-next-chapter-with-mastodon/
+      - date: "2026-03-09"
+        tags: [bsky]
+        title: Jay Graber が Bluesky の CEO を退任
+        body: Chief Innovation Officer に。Automattic の元 CEO Toni Schneider が暫定 CEO になる。
+        comment: ""
+        sources:
+          - https://bsky.social/about/blog/03-09-2026-a-new-chapter-for-bluesky
+      - date: "2026-03-19"
+        tags: [bsky]
+        title: IETF に ATP ワーキンググループが発足
+        body: AT Protocol の標準化を扱う。4月2日に Bluesky が発表。
+        comment: ""
+        sources:
+          - https://datatracker.ietf.org/wg/atp/history/
+          - https://atproto.com/blog/kicking-off-the-atp-working-group
+      - date: "2026-07-10"
+        tags: [bsky]
+        title: Toni Schneider が Bluesky の正式な CEO に
+        body: ""
+        comment: ""
+        sources:
+          - https://bsky.social/about/blog/07-10-2026-toni-schneider-ceo
+      - date: "2026-08"
+        tags: [bsky]
+        title: Bluesky の登録者数が約4,600万人に
+        body: 一方で、月間アクティブユーザーは前年より約27%減って約1,040万人になる。
+        comment: ""
+        sources:
+          - https://techcrunch.com/2026/08/11/blueskys-active-user-base-is-shrinking-as-its-focus-expands-beyond-the-app/
+      - date: "2026-08-20"
+        tags: [bsky]
+        title: Atproto Spaces のアルファ版が公開
+        body: 見られる人を限れる、非公開データのしくみ（暗号化ではなくアクセス制御による）。
+        comment: ""
+        sources:
+          - https://atproto.com/blog/atproto-spaces-alpha
+
+# 年表の最後に添える「支えている人たち」。誰がそのプロダクトを支えているか
+#   supporters : 支えている人・組織をひとことで
+#   how        : どう支えているか
+#   sources    : 出典の URL(脚注に出る)
+funding:
+  intro: ""
+  comment: ""
+  rows:
+    - protocol: Mastodon
+      tags: [ap]
+      supporters: 非営利の運営団体と寄付する人たち
+      how: 開発は非営利の運営団体が担う。Patreon などの小口の寄付、篤志家の大口の寄付、企業のスポンサーで成り立つ。各サーバーはそれぞれの運営者が支える。
+      sources:
+        - https://joinmastodon.org/sponsors
+        - https://blog.joinmastodon.org/2025/01/the-people-should-own-the-town-square/
+    - protocol: Misskey
+      tags: [misskey]
+      supporters: 有志の開発者と寄付する人たち、サーバーの運営会社
+      how: 本体は syuilo と有志が開発し、FANBOX・Patreon・GitHub Sponsors の寄付で支えられる。最大のサーバー Misskey.io は株式会社MisskeyHQ が運営し、利用者の月額の支援やスポンサーで成り立つ。
+      sources:
+        - https://misskey-hub.net/ja/docs/donate/
+        - https://prtimes.jp/main/html/rd/p/000000018.000039709.html
+    - protocol: Bluesky
+      tags: [bsky]
+      supporters: 公益を掲げる会社と、出資するベンチャーキャピタル
+      how: Bluesky Social PBC が開発と主なサーバーを担う。Twitter からの1,300万ドルで始まり、その後は Neo、Blockchain Capital、Bain Capital Crypto などが出資している。
+      sources:
+        - https://bsky.social/about/blog/7-05-2023-business-plan
+        - https://bsky.social/about/blog/10-24-2024-series-a
+        - https://bsky.social/about/blog/03-19-2026-series-b
+    - protocol: Nostr
+      tags: [nostr]
+      supporters: 個人の開発者と寄付する人たち、利用者どうし
+      how: Nostr 自体に運営会社や財団はなく、仕様は GitHub で話し合って決める。開発支援には、Jack Dorsey 本人の寄付、OpenSats の Nostr 基金、Nostr を中心に複数のオープンなプロトコルを支える and Other Stuff への提供、HRF の助成がある。利用者は Zap で投稿者や開発者を直接支える。
+      sources:
+        - https://opensats.org/blog/opensats-receives-additional-funding-of-dollar21m-from-startsmall
+        - https://hrf.org/program/financial-freedom/bitcoin-development-fund/
